@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.ramadan.databinding.ActivityListBinding;
@@ -38,6 +39,16 @@ public class List extends AppCompatActivity {
         apiInterface = instance.create(ApiInterface.class);
 
 
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+
+
+
         apiInterface.getData().enqueue(new Callback<java.util.List<Model_Data>>() {
             @Override
             public void onResponse(Call<java.util.List<Model_Data>> call, Response<java.util.List<Model_Data>> response) {
@@ -60,4 +71,7 @@ public class List extends AppCompatActivity {
 
 
     }
+
+
+
 }

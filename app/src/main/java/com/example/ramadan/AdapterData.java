@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,21 +35,23 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolde> {
     public void onBindViewHolder(@NonNull AdapterData.ViewHolde holder, int position) {
 
 
-        if (data.get(position).equals(0)){
+
+
+       if (data.get(position).getId().equals("1")){
 
             holder.date.setText("১ম রমজান");
 
         }
-        else if (data.get(position).equals(1)){
+        else if (data.get(position).getId().equals("2")){
             holder.date.setText("২য় রমজান");
 
         }
-       else if (data.get(position).equals(2)){
+       else if (data.get(position).getId().equals("3")){
 
             holder.date.setText("৩য় রমজান");
         }
        else {
-            holder.date.setText(data.get(position)+" তম রমজান");
+            holder.date.setText(data.get(position).getId()+" তম রমজান");
 
         }
 
@@ -57,8 +60,8 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolde> {
            holder.category.setText("রহমত");
        }
 
-       holder.seheri.setText("সেহেরি : "+data.get(position).getSeheri());
-       holder.iftari.setText("ইফতার :  "+data.get(position).getIftar());
+       holder.seheri.setText("  সেহেরি : "+data.get(position).getSeheri());
+       holder.iftari.setText("  ইফতার :  "+data.get(position).getIftar());
 
 
     }

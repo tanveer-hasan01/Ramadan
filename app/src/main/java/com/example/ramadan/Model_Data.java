@@ -9,6 +9,11 @@ public class Model_Data {
     @Expose
     private String date;
 
+
+    @SerializedName("id")
+    @Expose
+    private String id;
+
     @SerializedName("seheri")
     @Expose
     private String seheri;
@@ -28,6 +33,14 @@ public class Model_Data {
         this.category = category;
     }
 
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getDate() {
         return date;
