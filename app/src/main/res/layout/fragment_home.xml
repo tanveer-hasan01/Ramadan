@@ -56,7 +56,8 @@
                     android:layout_height="match_parent">
 
                     <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:id="@+id/linearProgressIndicator"
+
+                        android:id="@+id/seheri_linear_progress"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_margin="20dp"
@@ -76,7 +77,7 @@
 
                     <TextView
 
-                        android:id="@+id/textView6"
+                        android:id="@+id/seheri_end"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
@@ -89,13 +90,13 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/seheri_remaining_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:text="03:20:25"
                         android:textSize="18dp"
-                        app:layout_constraintBottom_toTopOf="@+id/linearProgressIndicator"
+                        app:layout_constraintBottom_toTopOf="@+id/seheri_linear_progress"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -103,7 +104,7 @@
                     <Switch
 
 
-                        android:id="@+id/switch1"
+                        android:id="@+id/seheri_alarm"
                         android:layout_width="wrap_content"
                         android:layout_height="24dp"
                         android:layout_marginStart="8dp"
@@ -113,7 +114,7 @@
                         android:fontFamily="@font/montserrat"
                         android:text="  Set Alarm"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                        app:layout_constraintTop_toBottomOf="@+id/seheri_end" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -143,7 +144,7 @@
                     android:layout_height="match_parent">
 
                     <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:id="@+id/linearProgressIndicator1"
+                        android:id="@+id/iftari_linear_progress"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_margin="20dp"
@@ -165,7 +166,7 @@
                     <Switch
 
 
-                        android:id="@+id/switch2"
+                        android:id="@+id/iftar_alarm"
                         android:layout_width="wrap_content"
                         android:layout_height="24dp"
 
@@ -175,10 +176,10 @@
                         android:fontFamily="@font/montserrat"
                         android:text="  Set Alarm"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                        app:layout_constraintTop_toBottomOf="@+id/iftar_start" />
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/iftar_start"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
@@ -192,13 +193,13 @@
                     <TextView
 
 
-                        android:id="@+id/textView5"
+                        android:id="@+id/time_remaining_iftari"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:text="03:20:25"
                         android:textSize="18dp"
-                        app:layout_constraintBottom_toTopOf="@+id/linearProgressIndicator1"
+                        app:layout_constraintBottom_toTopOf="@+id/iftari_linear_progress"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -231,12 +232,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_ramadan"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/current_date"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:layout_marginLeft="20sp"
-        android:id="@+id/textView"
+        android:id="@+id/current_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/days_one"
@@ -247,7 +248,7 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/ramadan_couting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
