@@ -15,10 +15,10 @@ import java.util.ArrayList;
 
 public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolde> {
 
-    ArrayList<Model_Data>data;
+    ArrayList<Model_Room>data;
     Context context;
 
-    public AdapterData(ArrayList<Model_Data> data, Context context) {
+    public AdapterData(ArrayList<Model_Room> data, Context context) {
         this.data = data;
         this.context = context;
     }
@@ -37,31 +37,33 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolde> {
 
 
 
-       if (data.get(position).getId().equals("1")){
+     /*  if (data.get(position).getRamadan_sl().equals("1")){
 
             holder.date.setText("১ম রমজান");
 
         }
-        else if (data.get(position).getId().equals("2")){
+        else if (data.get(position).getRamadan_sl().equals("2")){
             holder.date.setText("২য় রমজান");
 
         }
-       else if (data.get(position).getId().equals("3")){
+       else if (data.get(position).getRamadan_sl().equals("3")){
 
             holder.date.setText("৩য় রমজান");
         }
        else {
-            holder.date.setText(data.get(position).getId()+" তম রমজান");
+            holder.date.setText(data.get(position).getRamadan_sl()+" তম রমজান");
 
-        }
+        }*/
 
        if (data.get(position).getCategory().equals("rohmot"))
        {
            holder.category.setText("রহমত");
        }
 
+
        holder.seheri.setText("  সেহেরি : "+data.get(position).getSeheri());
        holder.iftari.setText("  ইফতার :  "+data.get(position).getIftar());
+       holder.date.setText(data.get(position).getDate());
 
 
     }

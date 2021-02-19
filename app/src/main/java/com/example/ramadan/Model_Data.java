@@ -9,6 +9,9 @@ public class Model_Data {
     @Expose
     private String date;
 
+    @SerializedName("ramadan_sl")
+    @Expose
+    private String ramadan_sl;
 
     @SerializedName("id")
     @Expose
@@ -26,11 +29,12 @@ public class Model_Data {
     @Expose
     private String category;
 
-    public Model_Data(String date, String seheri, String iftar, String category) {
+    public Model_Data(String date, String seheri, String iftar, String category,String ramadan_sl) {
         this.date = date;
         this.seheri = seheri;
         this.iftar = iftar;
         this.category = category;
+        this.ramadan_sl = ramadan_sl;
     }
 
 
@@ -68,6 +72,14 @@ public class Model_Data {
 
     public String getCategory() {
         return category;
+    }
+
+    public String getRamadan_sl() {
+        return ramadan_sl;
+    }
+
+    public void setRamadan_sl(String ramadan_sl) {
+        this.ramadan_sl = ramadan_sl;
     }
 
     public void setCategory(String category) {
