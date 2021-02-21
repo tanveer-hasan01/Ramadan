@@ -1,6 +1,7 @@
 package com.example.ramadan;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,7 +11,11 @@ import androidx.lifecycle.Observer;
 import androidx.room.Dao;
 import androidx.room.Query;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,9 +25,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ramadan.databinding.ActivityMainBinding;
+import com.example.ramadan.notification.AlertReceiver;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -103,13 +110,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
+    }
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void startAlarm(Calendar c) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        if (c.before(Calendar.getInstance())) {
+            c.add(Calendar.DATE, 1);
+        }
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+    }
 
-
-
-
+    private void cancelAlarm() {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        alarmManager.cancel(pendingIntent);
 
     }
 
